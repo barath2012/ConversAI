@@ -1,0 +1,55 @@
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+.font-melodrama {
+  font-family: "Melodrama", serif;
+}
+.font-telma {
+  font-family: "Telma", cursive;
+}
+.text-gradient-gold {
+  background: linear-gradient(
+    135deg,
+    #f9f295 0%,
+
+    #e0aa3e 50%,
+
+    #b8860b 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.glass-panel {
+  background: rgba(13, 12, 13, 0.6);
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.animate-marque {
+  animation: marque 25s infinite;
+  display: flex;
+}
+@keyframes marque {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.text-gradient-gray {
+  background: linear-gradient(
+    135deg,
+    #ffc500 0%,
+
+    #c21500 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+ .card-view{
+  opacity:0;
+  visibility:hidden;
+  position:absolute;
+  inset:0;
+ }

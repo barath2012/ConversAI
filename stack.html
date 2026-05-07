@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ConversAI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=melodrama@400,500,600,700&f[]=poppins@100,200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=melodrama@400,500,600,700&f[]=poppins@100,200,300,400,500,600,700,800,900&f[]=telma@300,400,500,700,900,1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
+  </head>
+  <body class="p-0 m-0 font-poppins">
+    <div
+      class="navbar left-1/2 -translate-x-1/2 text-white glass-panel z-50 fixed w-full top-0 flex justify-between p-[20px] items-center transition-all duration-500 ease-in-out"
+    >
+      <div class="left">
+        <a href="index.html"
+          ><h1 class="text-[36px] font-telma">ConversAI</h1></a
+        >
+      </div>
+      <div class="right font-poppins flex justify-between items-center w-[50%]">
+        <a href="features.html"
+          ><p class="font-light text-[18px]">Features</p></a
+        >
+
+        <a href="stack.html"
+          ><p class="font-light text-[18px]">Tech Stack</p></a
+        >
+
+        <a href="about.html"><p class="font-light text-[18px]">About</p></a>
+        <a href="signIn.html"
+          ><button class="bg-transparent border-0 font-light text-[18px]">
+            Sign In
+          </button></a
+        >
+      </div>
+    </div>
+    <div class="main bg-[#030305] relative w-full min-h-screen overflow-hidden">
+      <div
+        class="stack-container pt-[180px] flex justify-between items-center gap-8 max-w-7xl mx-auto"
+      >
+        <div class="stack-left w-1/2">
+          <div
+            class="pill mb-[50px] flex items-center bg-[#0a0a0c]/80 backdrop-blur-md border-white/10 rounded-full w-fit"
+          >
+            <button
+              id="frontEnd"
+              class="px-8 py-3 rounded-full font-medium tracking-wider bg-[#d4af37]"
+            >
+              FRONTEND
+            </button>
+            <button
+              id="backEnd"
+              class="px-8 py-3 rounded-full font-medium tracking-wider text-white/60 hover:text-white"
+            >
+              BACKEND
+            </button>
+          </div>
+          <h1 class="text-[#FFFFFF] text-[4vw] leading-[1.1]">
+            Limitless <br />
+            possibilities as <br />
+            built with <br />
+            <span class="font-telma text-gradient-gold font-semibold"
+              >modern tech</span
+            >
+          </h1>
+          <p class="text-[#818181] text-xl mt-[22px]">
+            Unleash the full potential of your AI assistant with a robust,
+            lightning-fast architecture spanning cutting-edge frontend libraries
+            and powerful backend integrations
+          </p>
+        </div>
+        <div class="stack-right w-1/2 flex">
+          <div class="stack-box flex flex-wrap gap-12 grow" id="frontend">
+            <div
+              class="stack-logo animate-bounce w-max flex items-center gap-4 bg-[#0a0a0c]/90 background-blue-xl border border-white/5 py-4 px-6 rounded-2xl"
+            >
+              <img
+                class="w-[54px]"
+                src="https://res.cloudinary.com/dp7yzo1r9/image/upload/v1776780363/kisspng-web-development-html-software-development-software-modern-pattern-5b2e9b177ec089.4478529015297810155192-removebg-preview_fl12hs.png"
+                alt=""
+              />
+              <p class="text-white font-semibold text-[16px]">HTML5</p>
+            </div>
+            <div
+              class="stack-logo animate-bounce w-max w-ma flex items-center gap-4 bg-[#0a0a0c]/90 background-blue-xl border border-white/5 py-4 px-6 rounded-2xl"
+            >
+              <img
+                class="w-[30px]"
+                src="https://res.cloudinary.com/dp7yzo1r9/image/upload/v1776779932/images_dvzg7f.jpg"
+                alt=""
+              />
+              <p class="text-white font-semibold text-[16px]">Tailwind</p>
+            </div>
+            <div
+              class="stack-logo animate-bounce w-max flex items-center gap-4 bg-[#0a0a0c]/90 background-blue-xl border border-white/5 py-4 px-6 rounded-2xl"
+            >
+              <img
+                class="w-[30px]"
+                src="https://res.cloudinary.com/dp7yzo1r9/image/upload/v1776779964/images_2_ycvvdl.png"
+                alt=""
+              />
+              <p class="text-white font-semibold text-[16px]">Javascript</p>
+            </div>
+            <div
+              class="stack-logo animate-bounce w-max flex items-center gap-4 bg-[#0a0a0c]/90 background-blue-xl border border-white/5 py-4 px-6 rounded-2xl"
+            >
+              <img
+                class="w-[54px]"
+                src="https://res.cloudinary.com/dp7yzo1r9/image/upload/v1776780044/GSAP_2023_ch8iym.webp"
+                alt=""
+              />
+            </div>
+            <div
+              class="stack-logo animate-bounce w-max flex items-center gap-4 bg-[#0a0a0c]/90 background-blue-xl border border-white/5 py-4 px-6 rounded-2xl"
+            >
+              <i class="ri-mouse-line text-white"></i>
+              <p class="text-white font-semibold text-[16px]">Locomotive</p>
+            </div>
+            <div
+              class="stack-logo animate-bounce w-max flex items-center gap-4 bg-[#0a0a0c]/90 background-blue-xl border border-white/5 py-4 px-6 rounded-2xl"
+            >
+              <i class="ri-text-spacing text-white"></i>
+              <p class="text-white font-semibold text-[16px]">ScrollTrigger</p>
+            </div>
+          </div>
+          <div class="stack-box hidden flex flex-wrap gap-12" id="backend">
+            <div
+              class="stack-logo animate-bounce w-max flex items-center gap-4 bg-[#0a0a0c]/90 background-blue-xl border border-white/5 py-4 px-6 rounded-2xl"
+            >
+              <img
+                class="w-[30px]"
+                src="https://res.cloudinary.com/dp7yzo1r9/image/upload/v1776952467/openai-chatgpt-logo-icon-free-png_xde8pc.webp"
+                alt=""
+              />
+              <p class="text-white font-semibold text-[16px]">OpenAI</p>
+            </div>
+            <div
+              class="stack-logo animate-bounce w-max flex items-center gap-4 bg-[#0a0a0c]/90 background-blue-xl border border-white/5 py-4 px-6 rounded-2xl"
+            >
+              <img
+                class="w-[30px]"
+                src="https://res.cloudinary.com/dp7yzo1r9/image/upload/v1776952506/full-logo-square-5_miposj.svg"
+                alt=""
+              />
+              <p class="text-white font-semibold text-[16px]">Vapi</p>
+            </div>
+            <div
+              class="stack-logo animate-bounce w-max flex items-center gap-4 bg-[#0a0a0c]/90 background-blue-xl border border-white/5 py-4 px-6 rounded-2xl"
+            >
+              <img
+                class="w-[30px]"
+                src="https://res.cloudinary.com/dp7yzo1r9/image/upload/v1776952609/images__1_-removebg-preview_zscobk.png"
+                alt=""
+              />
+              <p class="text-white font-semibold text-[16px]">Supabase</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="techStack.js"></script>
+  </body>
+</html>

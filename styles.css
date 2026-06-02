@@ -47,9 +47,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
- .card-view{
-  opacity:0;
-  visibility:hidden;
-  position:absolute;
-  inset:0;
- }
+.card-view {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  inset: 0;
+}

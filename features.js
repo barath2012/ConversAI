@@ -42,66 +42,24 @@ ScrollTrigger.scrollerProxy(".main", {
     : "fixed",
 });
 
-let h2data = document.querySelectorAll(".text h2");
-h2data.forEach((item) => {
-  let textdata = item.textContent;
-  let splittext = textdata.split("");
-  let data = "";
-  splittext.forEach((char) => {
-    data += `<span>${char}</span>`;
-  });
-  item.innerHTML = data;
-});
-
-gsap.to(".text h2 span", {
-  color: "#050507",
-  stagger: 0.2,
-  scrollTrigger: {
-    trigger: ".page2",
-    scroller: ".main",
-    start: "top top",
-    end: "+=240%",
-
-    pin: true,
-    scrub: 1.5,
-  },
-});
-
-gsap.from(".page_1 h1", {
-  y: 100,
-  opacity: 0,
-  duration: 1.5,
-  delay: 0.2,
-  skewY: 5,
-  stagger: 0.15,
-});
-
-ScrollTrigger.create({
-  trigger: ".page2",
-  scroller: ".main",
-  start: "top top",
-  end: "bottom -150%",
-  scrub: 1,
-  markers: true,
-  onEnter: () => gsap.to(".main", { backgroundColor: "#fff", duration: 1 }),
-  onLeave: () => gsap.to(".main", { backgroundColor: "#0F0D0D", duration: 1 }),
-  onEnterBack: () => gsap.to(".main", { backgroundColor: "#fff", duration: 1 }),
-  onLeaveBack: () =>
-    gsap.to(".main", { backgroundColor: "#0F0D0D", duration: 1 }),
-});
-console.log("hi");
 //Navbar Scroll Effect
+
 const navbar = document.querySelector(".navbar");
+
 locoScroll.on("scroll", (args) => {
   if (args.scroll.y > 50) {
     navbar.classList.remove("top-0", "w-full");
+
     navbar.classList.add("top-4", "w-[95%]", "rounded-full", "m-auto");
   } else {
     // When at the top: Revert to full width
+
     navbar.classList.add("top-0", "w-full");
+
     navbar.classList.remove("top-4", "w-[95%]", "rounded-full");
   }
 });
+
 window.addEventListener("load", () => {
   ScrollTrigger.refresh();
 

@@ -48,178 +48,352 @@
       </div>
     </div>
 
+    <!-- MAIN STARTED -->
     <div
-      class="test-main relative min-h-screen mt-[100px] items-center flex justify-center gap-30 max-w-6xl mx-auto"
+      class="main bg-[#050507] overflow-hidden relative"
+      data-scroll-container
     >
+      <!-- 🚨PRIMARY CARD -->
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
       <div
-        class="test-left bg-[#0a0a0c] backdrop-blur-6xl rounded-2xl border border-[#818181]/10 p-[20px] w-1/2"
+        id="PrimmaryCard"
+        class="test-main hidden relative min-h-screen mt-[100px] items-center flex justify-center gap-30 max-w-6xl mx-auto"
       >
-        <p class="text-[#d4af37] tracking-[4px] font-semibold text-[14px]">
-          INITIALIZE
-        </p>
-        <h1 class="text-[4vw] text-white">
-          What's the <span class="text-[#d4af37] font-telma">task?</span>
-        </h1>
-        <p class="text-[#818181] text-[20px]">
-          Select the purpose of this call. The AI Agent will <br />
-          adapt its tone, information gathering , and <br />
-          conversational path dynamically
-        </p>
+        <div
+          class="test-left bg-[#0a0a0c] backdrop-blur-6xl rounded-2xl border border-[#818181]/10 p-[20px] w-1/2"
+        >
+          <p class="text-[#d4af37] tracking-[4px] font-semibold text-[14px]">
+            INITIALIZE
+          </p>
+          <h1 class="text-[4vw] text-white">
+            What's the <span class="text-[#d4af37] font-telma">task?</span>
+          </h1>
+          <p class="text-[#818181] text-[20px]">
+            Select the purpose of this call. The AI Agent will <br />
+            adapt its tone, information gathering , and <br />
+            conversational path dynamically
+          </p>
+        </div>
+        <div class="test-right w-1/2">
+          <div class="test-container text-white">
+            <div class="test-box flex flex-wrap">
+              <button
+                class="task-option w-[200px] h-[100px] m-[20px] rounded-2xl border border-[#818181]/10 bg-[#0a0a0c]"
+                data-type="enquiry"
+                onclick="TaskNext('enquiry', 1)"
+              >
+                <i class="ri-questionnaire-line"></i>
+                <h1>Enquiry</h1>
+              </button>
+              <button
+                class="task-option w-[200px] h-[100px] m-[20px] rounded-2xl border border-[#818181]/10 bg-[#0a0a0c]"
+              >
+                <i class="ri-shield-check-line"></i>
+                <h1>Feedback</h1>
+              </button>
+
+              <button
+                class="task-option w-[200px] h-[100px] m-[20px] rounded-2xl border border-[#818181]/10 bg-[#0a0a0c]"
+              >
+                <i class="ri-megaphone-line"></i>
+                <h1>Sales Pitch</h1>
+              </button>
+              <button
+                class="task-option w-[200px] h-[100px] m-[20px] rounded-2xl border border-[#818181]/10 bg-[#0a0a0c]"
+              >
+                <i class="ri-notification-2-line"></i>
+                <h1>Notify Someone</h1>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="test-right w-1/2">
-        <div class="test-container text-white">
-          <div class="test-box flex flex-wrap">
+
+      <!-- 💭ENQUIRY CARD - 1 -->
+      <div
+        id="enquiry-1"
+        class="test-main hidden relative min-h-screen mt-[100px] items-center flex justify-center gap-30 max-w-6xl mx-auto"
+      >
+        <div
+          class="t-left bg-[#0a0a0c] backdrop-blur-6xl rounded-2xl border border-[#818181]/10 p-[20px] w-1/2"
+        >
+          <p class="text-[#d4af37] tracking-[4px] font-semibold text-[14px]">
+            TARGET
+          </p>
+          <h1 class="text-[4vw] text-white">
+            Tell us about the
+            <span class="text-[#d4af37] font-telma">Store.</span>
+          </h1>
+          <p class="text-[#818181] text-[20px]">
+            Enter the target store name and the manager's
+            <br />
+            name if known. This will help the agent establish a <br />
+            personalized connection.
+          </p>
+        </div>
+        <div class="t-right">
+          <div
+            class="sign-box bg-[#0a0a0c] p-[70px] rounded-2xl border border-[#818181]/20"
+          >
+            <div class="text-container mt-[25px]">
+              <h1
+                class="text-[#818181] text-[14px] tracking-widest font-semibold"
+              >
+                STORE NAME
+              </h1>
+              <input
+                class="StoreName bg-black p-2 border border-[#818181]/30 rounded-xl mt-[10px] text-[#818181] w-[100%]"
+                type="email"
+                placeholder="Main Street Cafe"
+              />
+            </div>
+            <div class="text-container">
+              <h1
+                class="text-[#818181] text-[14px] tracking-widest font-semibold mt-[10px]"
+              >
+                MANAGER NAME (OPTIONAL)
+              </h1>
+              <input
+                class="ManagerName bg-black p-2 border border-[#818181]/30 rounded-xl mt-[10px] text-[#818181] w-[100%]"
+                placeholder="Leave blank if unknown"
+              />
+            </div>
             <button
-              class="w-[200px] h-[100px] m-[20px] rounded-2xl border border-[#818181]/10 bg-[#0a0a0c]"
+              onclick="TaskNext('enquiry', 2)"
+              class="button-next text-[#000000] bg-[#d4af37] p-[10px] mt-[15px] rounded-xl w-[100%] font-medium"
             >
-              <i class="ri-questionnaire-line"></i>
-              <h1>Enquiry</h1>
-            </button>
-            <button
-              class="w-[200px] h-[100px] m-[20px] rounded-2xl border border-[#818181]/10 bg-[#0a0a0c]"
-            >
-              <i class="ri-shield-check-line"></i>
-              <h1>Feedback</h1>
-            </button>
-            <button
-              class="w-[200px] h-[100px] m-[20px] rounded-2xl border border-[#818181]/10 bg-[#0a0a0c]"
-            >
-              <i class="ri-megaphone-line"></i>
-              <h1>Sales Pitch</h1>
-            </button>
-            <button
-              class="w-[200px] h-[100px] m-[20px] rounded-2xl border border-[#818181]/10 bg-[#0a0a0c]"
-            >
-              <i class="ri-notification-2-line"></i>
-              <h1>Notify Someone</h1>
+              Next
             </button>
           </div>
         </div>
       </div>
-    </div>
-    <div class="test-cards card-view min-h-screen flex">
+
+      <!-- 💭ENQUIRY CARD - 2 -->
       <div
-        class="t-left bg-[#0a0a0c] backdrop-blur-6xl rounded-2xl border border-[#818181]/10 p-[20px] w-1/2"
+        id="enquiry-2"
+        class="test-main hidden relative min-h-screen mt-[100px] items-center flex justify-center gap-30 max-w-6xl mx-auto"
       >
-        <p class="text-[#d4af37] tracking-[4px] font-semibold text-[14px]">
-          TARGET
-        </p>
-        <h1 class="text-[4vw] text-white">
-          Tell us about the
-          <span class="text-[#d4af37] font-telma">Store.</span>
-        </h1>
-        <p class="text-[#818181] text-[20px]">
-          Enter the target store name and the manager's
-          <br />
-          name if known. This will help the agent establish a <br />
-          personalized connection.
-        </p>
-      </div>
-      <div class="t-right">
         <div
-          class="sign-box bg-[#0a0a0c] p-[70px] rounded-2xl border border-[#818181]/20"
+          class="t-left bg-[#0a0a0c] backdrop-blur-6xl rounded-2xl border border-[#818181]/10 p-[20px] w-1/2"
         >
-          <div class="text-container mt-[25px]">
-            <h1
-              class="text-[#818181] text-[14px] tracking-widest font-semibold"
+          <p class="text-[#d4af37] tracking-[4px] font-semibold text-[14px]">
+            SUBJECT
+          </p>
+          <h1 class="text-[4vw] text-white">
+            Details of your
+            <span class="text-[#d4af37] font-telma">Enquiry.</span>
+          </h1>
+          <p class="text-[#818181] text-[20px]">
+            Specify your query and any necessary product
+            <br />
+            specifications or the context the agent must mention.
+          </p>
+        </div>
+        <div class="t-right">
+          <div
+            class="sign-box bg-[#0a0a0c] p-[70px] rounded-2xl border border-[#818181]/20"
+          >
+            <div class="text-container mt-[25px]">
+              <h1
+                class="text-[#818181] text-[14px] tracking-widest font-semibold"
+              >
+                WHAT TO ENQUIRE
+              </h1>
+              <input
+                class="queryName bg-black p-2 border border-[#818181]/30 rounded-xl mt-[10px] text-[#818181] w-[100%]"
+                type="email"
+                placeholder="Query Details (e.g. 'pricing, availability')"
+              />
+            </div>
+            <div class="text-container">
+              <h1
+                class="text-[#818181] text-[14px] tracking-widest font-semibold mt-[10px]"
+              >
+                SPECIFICATIONS (OPTIONAL)
+              </h1>
+              <input
+                class="SpecsName bg-black p-2 border border-[#818181]/30 rounded-xl mt-[10px] text-[#818181] w-[100%]"
+                placeholder="Eg, model, size, color"
+              />
+            </div>
+            <button
+              onclick="TaskNext('enquiry', 3)"
+              class="text-[#000000] bg-[#d4af37] p-[10px] mt-[15px] rounded-xl w-[100%] font-medium"
             >
-              STORE NAME
-            </h1>
-            <input
-              class="bg-black p-2 border border-[#818181]/30 rounded-xl mt-[10px] text-[#818181] w-[100%]"
-              type="email"
-              placeholder="Main Street Cafe"
-            />
+              Next
+            </button>
           </div>
-          <div class="text-container">
-            <h1
-              class="text-[#818181] text-[14px] tracking-widest font-semibold mt-[10px]"
+        </div>
+      </div>
+      <!-- Task Summary -->
+      <div
+        id="enquiry-3"
+        class="test-main relative hidden min-h-screen mt-[100px] items-center flex justify-center gap-30 max-w-6xl mx-auto"
+      >
+        <div
+          class="t-left bg-[#0a0a0c] backdrop-blur-6xl rounded-2xl border border-[#818181]/10 p-[20px] w-1/2"
+        >
+          <p class="text-[#d4af37] tracking-[4px] font-semibold text-[14px]">
+            EXECUTION
+          </p>
+          <h1 class="text-[4vw] text-white">
+            Review &
+            <span class="text-[#d4af37] font-telma">Delegate.</span>
+          </h1>
+          <p class="text-[#818181] text-[20px]">
+            Review all the information entered. When you're
+            <br />
+            ready, delegate the task, and the agent will inititate
+            <br />
+            the process.
+          </p>
+        </div>
+        <div class="t-right">
+          <div
+            class="sign-box bg-[#0a0a0c] p-[70px] rounded-2xl border border-[#818181]/20"
+          >
+            <div
+              class="sign-head text-white flex justify-between gap-20 mt-[10px]"
             >
-              MANAGER NAME (OPTIONAL)
-            </h1>
-            <input
-              class="bg-black p-2 border border-[#818181]/30 rounded-xl mt-[10px] text-[#818181] w-[100%]"
-              type="password"
-              placeholder="Leave blank if unknown"
-            />
+              <h1 class="text-white font-semibold">Task Summary</h1>
+              <h1 class="text-[#d4af37] tracking-wider">START OVER</h1>
+            </div>
+            <div
+              class="sign-head text-white flex justify-between gap-20 mt-[40px]"
+            >
+              <h1 class="text-[#d4af37] font-semibold">Task Type</h1>
+              <h1 class="text-[#d4af37] font-semibold typeTk">Enquiry</h1>
+            </div>
+            <div
+              class="sign-head text-white flex justify-between gap-20 mt-[20px]"
+            >
+              <h1 class="text-[#818181] text-[14px] font-bold tracking-wider">
+                STORE
+              </h1>
+
+              <h1 class="t-sm-store">Not Provided</h1>
+            </div>
+            <div
+              class="sign-head text-white flex justify-between gap-20 mt-[10px]"
+            >
+              <h1 class="text-[#818181] text-[14px] font-bold tracking-wider">
+                MANAGER
+              </h1>
+
+              <h1 class="t-sm-manager">Not Provided</h1>
+            </div>
+            <div
+              class="sign-head text-white flex justify-between gap-20 mt-[20px]"
+            >
+              <h1 class="text-[#818181] text-[14px] font-bold tracking-wider">
+                QUERY
+              </h1>
+
+              <h1 class="text-[#818181] t-sm-query">Not Provided</h1>
+            </div>
+            <div
+              class="sign-head text-white flex justify-between gap-20 mt-[10px]"
+            >
+              <h1 class="text-[#818181] text-[14px] font-bold tracking-wider">
+                SPECS
+              </h1>
+
+              <h1 class="text-[#818181] t-sm-specs">Not Provided</h1>
+            </div>
           </div>
+
           <button
             class="text-[#000000] bg-[#d4af37] p-[10px] mt-[15px] rounded-xl w-[100%] font-medium"
           >
-            Next
+            Delegate Task
           </button>
         </div>
       </div>
-    </div>
-    <div class="test-cards card-view min-h-screen flex">
       <div
-        class="t-left bg-[#0a0a0c] backdrop-blur-6xl rounded-2xl border border-[#818181]/10 p-[20px] w-1/2"
+        class="ai-card test-main relative min-h-screen mt-[100px] items-center flex justify-center gap-30 max-w-6xl mx-auto"
       >
-        <p class="text-[#d4af37] tracking-[4px] font-semibold text-[14px]">
-          TARGET
-        </p>
-        <h1 class="text-[4vw] text-white">
-          Tell us about the
-          <span class="text-[#d4af37] font-telma">Store.</span>
-        </h1>
-        <p class="text-[#818181] text-[20px]">
-          Enter the target store name and the manager's
-          <br />
-          name if known. This will help the agent establish a <br />
-          personalized connection.
-        </p>
-      </div>
-      <div class="t-right">
         <div
-          class="sign-box bg-[#0a0a0c] p-[70px] rounded-2xl border border-[#818181]/20"
+          class="r-card bg-[#0a0a0c] p-30 rounded-2xl flex flex-col border border-[#818181]/30"
         >
-          <div class="text-container mt-[25px]">
-            <h1
-              class="text-[#818181] text-[14px] tracking-widest font-semibold"
-            >
-              STORE NAME
-            </h1>
-            <input
-              class="bg-black p-2 border border-[#818181]/30 rounded-xl mt-[10px] text-[#818181] w-[100%]"
-              type="email"
-              placeholder="Main Street Cafe"
-            />
-          </div>
-          <div class="text-container">
-            <h1
-              class="text-[#818181] text-[14px] tracking-widest font-semibold mt-[10px]"
-            >
-              MANAGER NAME (OPTIONAL)
-            </h1>
-            <input
-              class="bg-black p-2 border border-[#818181]/30 rounded-xl mt-[10px] text-[#818181] w-[100%]"
-              type="password"
-              placeholder="Leave blank if unknown"
-            />
-          </div>
-          <button
-            class="text-[#000000] bg-[#d4af37] p-[10px] mt-[15px] rounded-xl w-[100%] font-medium"
+          <div
+            class="sim flex gap-2 items-center bg-[#d4af37]/10 w-max p-2 rounded-full border border-[#d4af37]/50"
           >
-            Next
+            <div
+              class="w-[10px] h-[10px] bg-[#d4af37] rounded-full shadow-lg shadow-blue-500"
+            ></div>
+            <h1 class="uppercase tracking-wider text-[#d4af37] font-medium">
+              Simulation Live
+            </h1>
+          </div>
+          <div class="ai">
+            <h1 class="text-[white] font-telma font-semibold text-[4vw]">
+              Hello.
+            </h1>
+            <p class="text-[#818181] text-[20px]">
+              Task Delegated. Initiating AI Call
+            </p>
+          </div>
+          <div class="text"></div>
+          <button
+            class="bg-[#d4af37] p-[15px] text-[1.25vw] font-medium rounded-xl"
+          >
+            <i class="ri-checkbox-circle-line"></i> Return To Command Center
           </button>
         </div>
       </div>
     </div>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <script src="about.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      const taskData = {};
+      function TaskNext(TaskType, StepNumber) {
+        if (TaskType == "enquiry") {
+          taskData["TaskType"] = "enquiry";
+          if (StepNumber == 1) {
+            const currentcard = document.querySelector("#PrimmaryCard");
+            const nextId = TaskType + "-" + StepNumber;
+            const nextCard = document.getElementById(nextId);
+            console.log(nextCard);
+            currentcard.classList.add("hidden");
+            nextCard.classList.remove("hidden");
+          } else if (StepNumber > 1) {
+            console.log("call");
+            const currentcardid = TaskType + "-" + (StepNumber - 1);
+            const currentCard = document.getElementById(currentcardid);
+            const nextId = TaskType + "-" + StepNumber;
+            const nextCard = document.getElementById(nextId);
+            console.log(nextCard);
+            currentCard.classList.add("hidden");
+            nextCard.classList.remove("hidden");
+          }
+
+          //Saving Data
+          if (StepNumber == 2) {
+            console.log("");
+            const storeName = document.querySelector(".StoreName");
+            const managerName = document.querySelector(".ManagerName");
+            taskData["store"] = storeName.value;
+            taskData["manager"] = managerName.value;
+          } else if ((StepNumber = 3)) {
+            const queryName = document.querySelector(".queryName");
+            const SpecsName = document.querySelector(".SpecsName");
+            taskData["query"] = queryName.value;
+            taskData["specs"] = SpecsName.value;
+          }
+
+          const smStore = document.querySelector(".t-sm-store");
+          const smManager = document.querySelector(".t-sm-manager");
+          const smQuery = document.querySelector(".t-sm-query");
+          const smSpecs = document.querySelector(".t-sm-specs");
+          smStore.textContent = taskData["store"];
+          smManager.textContent = taskData["manager"];
+          smQuery.textContent = taskData["query"];
+          smSpecs.textContent = taskData["specs"];
+        }
+      }
+    </script>
   </body>
 </html>

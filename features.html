@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -48,7 +48,10 @@
         >
       </div>
     </div>
-    <div class="">
+    <div
+      class="main overflow-hidden relative w-full min-h-screen"
+      data-scroll-container
+    >
       <div
         class="orb absolute bg-[#d4af37] w-[600px] h-[600px] rounded-full blur-[200px] top-[10%] opacity-[0.35] left-[40%]"
       ></div>
@@ -310,6 +313,7 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
       integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
@@ -323,7 +327,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <script src=""></script>
+
+    <script src="features.js"></script>
   </body>
 </html>

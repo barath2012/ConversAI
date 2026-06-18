@@ -22,6 +22,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
     />
+    <script type="module">
+      import Vapi from "https://esm.sh/@vapi-ai/web";
+      window.Vapi = Vapi;
+    </script>
   </head>
   <body class="p-0 m-0 font-poppins bg-black">
     <div
@@ -57,7 +61,7 @@
       <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
       <div
         id="PrimmaryCard"
-        class="test-main hidden relative min-h-screen mt-[100px] items-center flex justify-center gap-30 max-w-6xl mx-auto"
+        class="test-main relative min-h-screen mt-[100px] items-center flex justify-center gap-30 max-w-6xl mx-auto"
       >
         <div
           class="test-left bg-[#0a0a0c] backdrop-blur-6xl rounded-2xl border border-[#818181]/10 p-[20px] w-1/2"
@@ -303,6 +307,7 @@
           </div>
 
           <button
+            onclick="Delegate()"
             class="text-[#000000] bg-[#d4af37] p-[10px] mt-[15px] rounded-xl w-[100%] font-medium"
           >
             Delegate Task
@@ -310,7 +315,8 @@
         </div>
       </div>
       <div
-        class="ai-card test-main relative min-h-screen mt-[100px] items-center flex justify-center gap-30 max-w-6xl mx-auto"
+        id="enquiry-4"
+        class="ai-card hidden test-main relative min-h-screen mt-[100px] items-center flex justify-center gap-30 max-w-6xl mx-auto"
       >
         <div
           class="r-card bg-[#0a0a0c] p-30 rounded-2xl flex flex-col border border-[#818181]/30"
@@ -329,7 +335,7 @@
             <h1 class="text-[white] font-telma font-semibold text-[4vw]">
               Hello.
             </h1>
-            <p class="text-[#818181] text-[20px]">
+            <p id="delegateP" class="text-[#818181] text-[20px]">
               Task Delegated. Initiating AI Call
             </p>
           </div>
@@ -348,10 +354,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
     <script>
+      const delegateP = document.getElementById("delegateP");
+      const PROJECT_ID = "apxiudgiltqpauvvzzyn";
+      const EDGE_FUNCTION_URL = `https://${PROJECT_ID}.supabase.co/functions/v1/vapi-trigger`;
+      const VAPI_PUBLIC_KEY = "52adea3c-7628-43a1-aaf6-8fc33c682b27 ";
+      let vapi,
+        selectedPurpose = "";
+      let activeCallId = "";
       const taskData = {};
       function TaskNext(TaskType, StepNumber) {
         if (TaskType == "enquiry") {
-          taskData["TaskType"] = "enquiry";
+          taskData["purpose"] = "enquiry";
+          selectedPurpose = "enquiry";
           if (StepNumber == 1) {
             const currentcard = document.querySelector("#PrimmaryCard");
             const nextId = TaskType + "-" + StepNumber;
@@ -375,23 +389,62 @@
             console.log("");
             const storeName = document.querySelector(".StoreName");
             const managerName = document.querySelector(".ManagerName");
-            taskData["store"] = storeName.value;
-            taskData["manager"] = managerName.value;
+            taskData["enquiry-store"] = storeName.value;
+            taskData["enquiry-manager"] = managerName.value;
           } else if ((StepNumber = 3)) {
             const queryName = document.querySelector(".queryName");
             const SpecsName = document.querySelector(".SpecsName");
-            taskData["query"] = queryName.value;
-            taskData["specs"] = SpecsName.value;
+            taskData["enquiry-query"] = queryName.value;
+            taskData["enquiry-specs"] = SpecsName.value;
           }
 
           const smStore = document.querySelector(".t-sm-store");
           const smManager = document.querySelector(".t-sm-manager");
           const smQuery = document.querySelector(".t-sm-query");
           const smSpecs = document.querySelector(".t-sm-specs");
-          smStore.textContent = taskData["store"];
-          smManager.textContent = taskData["manager"];
-          smQuery.textContent = taskData["query"];
-          smSpecs.textContent = taskData["specs"];
+          smStore.textContent = taskData["enquiry-store"];
+          smManager.textContent = taskData["enquiry-manager"];
+          smQuery.textContent = taskData["enquiry-query"];
+          smSpecs.textContent = taskData["enquiry-specs"];
+        }
+      }
+
+      function Delegate() {
+        const summaryCard = document.getElementById("enquiry-3");
+        const nextCard = document.getElementById("enquiry-4");
+        summaryCard.classList.add("hidden");
+        nextCard.classList.remove("hidden");
+        RUNAI();
+      }
+
+      async function RUNAI() {
+        try {
+          const response = await fetch(EDGE_FUNCTION_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              action: "init_call",
+              purpose: selectedPurpose,
+              userData: taskData,
+            }),
+          });
+          const result = await response.json();
+          if (result.success) {
+            if (!window.Vapi) throw new Error("Vapi SDK missing");
+            vapi = new window.Vapi(VAPI_PUBLIC_KEY);
+            const call = await vapi.start(result.assistantConfig);
+            activeCallId = call.id;
+
+            vapi.on("call-start", () => {
+              delegateP.innerText = "Audio Connected!";
+            });
+
+            vapi.on("call-end", () => finishSession());
+          } else {
+            alert("Config Error: " + result.error);
+          }
+        } catch (e) {
+          console.log(e);
         }
       }
     </script>

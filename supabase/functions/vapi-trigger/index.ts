@@ -22,7 +22,7 @@ serve(async (req) => {
     const body = await req.json();
     const action = body.action || 'init_call';
     const purpose = body.purpose || 'enquiry';
-    const userData = body.userData || {}; 
+    const userData = body.taskData || {}; 
     const vapiCallId = body.vapiCallId;
 
     // --- ACTION: FETCH REPORT ---
